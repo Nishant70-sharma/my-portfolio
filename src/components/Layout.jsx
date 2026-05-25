@@ -1,8 +1,8 @@
-import { useMemo } from "react";
 import { Link, NavLink } from "react-router-dom";
 
 export default function Layout({ children }) {
-  const year = useMemo(() => new Date().getFullYear(), []);
+  // NOTE: keep year hook only if used in footer/header.
+  // const year = useMemo(() => new Date().getFullYear(), []);
 
   const baseLinkStyle = {
     textDecoration: "none",
@@ -63,6 +63,20 @@ export default function Layout({ children }) {
               }
             >
               Contact
+            </NavLink>
+
+            <NavLink
+              to="/resume"
+              style={({ isActive }) =>
+                isActive
+                  ? {
+                      ...baseLinkStyle,
+                      color: "var(--accent)",
+                    }
+                  : baseLinkStyle
+              }
+            >
+              Resume
             </NavLink>
           </nav>
         </div>

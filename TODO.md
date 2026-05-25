@@ -1,6 +1,6 @@
-- [x] Read current Home.jsx and related styles (done)
-- [x] Create/update plan for new homepage update (done)
-- [x] Update src/pages/Home.jsx to match new homepage design + fix hero image import
-- [x] Run npm run lint
-- [x] Run npm run build
+- [x] Create new Tech page at src/pages/TechTechnologies.jsx
+- [x] Add route /tech in src/App.jsx
 
+- [x] Update Home page tech stack section to show only 5 technologies
+- [x] Add "etc" link on Home tech section to redirect to /tech
+- [x] Run dev/build to verify navigation works
