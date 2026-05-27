@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   Mail,
   Github,
@@ -40,7 +41,7 @@ ${formData.message}
     `;
 
     window.location.href = `mailto:ns695373@gmail.com?subject=${encodeURIComponent(
-      subject
+      subject,
     )}&body=${encodeURIComponent(body)}`;
   };
 
@@ -101,9 +102,7 @@ ${formData.message}
 
                 <div>
                   <p className="text-sm text-slate-500">Phone</p>
-                  <h3 className="font-semibold text-slate-800">
-                    7037745770
-                  </h3>
+                  <h3 className="font-semibold text-slate-800">7037745770</h3>
                 </div>
               </div>
 
@@ -115,7 +114,7 @@ ${formData.message}
                 <div>
                   <p className="text-sm text-slate-500">Location</p>
                   <h3 className="font-semibold text-slate-800">
-                  Noida, Delhi  Gurgaon, Haryana, India (Remote Available)
+                    Noida, Delhi Gurgaon, Haryana, India (Remote Available)
                   </h3>
                 </div>
               </div>
@@ -142,6 +141,34 @@ ${formData.message}
                 <Linkedin size={20} />
                 LinkedIn
               </a>
+              <Link
+                to="/private-share-2026"
+                className="group relative inline-flex items-center gap-3 overflow-hidden rounded-2xl border border-purple-200 bg-white px-6 py-3 font-semibold text-slate-800 shadow-lg transition duration-300 hover:-translate-y-1 hover:border-purple-400 hover:shadow-2xl"
+              >
+                {/* GLOW EFFECT */}
+                <span className="absolute inset-0 bg-gradient-to-r from-purple-500/0 via-purple-500/10 to-pink-500/0 opacity-0 transition duration-500 group-hover:opacity-100" />
+
+                {/* ICON */}
+                <span className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-r from-purple-600 to-pink-500 text-white shadow-lg">
+                  🔒
+                </span>
+
+                {/* TEXT */}
+                <span className="relative flex flex-col text-left">
+                  <span className="text-sm font-bold leading-none">
+                    Private Share
+                  </span>
+
+                  <span className="mt-1 text-xs font-medium text-slate-500">
+                    Admin Access
+                  </span>
+                </span>
+
+                {/* ARROW */}
+                <span className="relative text-purple-600 transition duration-300 group-hover:translate-x-1">
+                  →
+                </span>
+              </Link>
             </div>
           </div>
 
