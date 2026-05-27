@@ -7,6 +7,7 @@ import Resume from "./pages/Resume";
 import Layout from "./components/Layout";
 import NotFound from "./pages/NotFound";
 import TechTechnologies from "./pages/TechTechnologies";
+import ProtectedSharePage from "./pages/ProtectedSharePage";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/" element={<Navigate to="/" replace />} />
 
           <Route path="*" element={<NotFound />} />
+          <Route path="/private-share-2026" element={<ProtectedSharePage />} />
         </Routes>
       </Layout>
     </BrowserRouter>
