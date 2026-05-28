@@ -33,8 +33,7 @@ export default function SharePortfolio() {
   const handleShare = (e) => {
     e.preventDefault();
 
-    const subject =
-      "Nishant Sharma | Full Stack Developer Portfolio";
+    const subject = "Nishant Sharma | Full Stack Developer Portfolio";
 
     const body = `
 Hello,
@@ -44,10 +43,10 @@ I hope you're doing well.
 I’m sharing my portfolio and resume for your review.
 
 🌐 Portfolio:
-https://your-portfolio.vercel.app
+https://my-portfolio-mu-roan-71.vercel.app/
 
 📄 Resume:
-https://your-portfolio.vercel.app/nishant_resume.pdf
+https://my-portfolio-mu-roan-71.vercel.app/nishant_resume.pdf
 
 About Me:
 I’m a Full Stack Developer skilled in:
@@ -67,7 +66,7 @@ Nishant Sharma
 `;
 
     window.location.href = `mailto:${email}?subject=${encodeURIComponent(
-      subject
+      subject,
     )}&body=${encodeURIComponent(body)}`;
   };
 
@@ -75,7 +74,7 @@ Nishant Sharma
 
   if (!authorized) {
     return (
-      <main className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#f8fafc] px-5">
+      <main className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[var(--app-bg)] px-5 text-[var(--app-text)]">
         {/* BG EFFECTS */}
         <div className="absolute left-[-120px] top-[-120px] h-[320px] w-[320px] rounded-full bg-purple-500/20 blur-3xl" />
 
@@ -124,9 +123,7 @@ Nishant Sharma
               className="group mt-6 inline-flex w-full items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-purple-600 to-pink-500 px-7 py-4 font-semibold text-white shadow-xl transition duration-300 hover:scale-[1.02]"
             >
               <ShieldCheck size={20} />
-
               Unlock Page
-
               <ArrowRight
                 size={18}
                 className="transition group-hover:translate-x-1"
@@ -223,19 +220,14 @@ Nishant Sharma
 
             {/* RIGHT */}
             <div className="rounded-[32px] border border-slate-200 bg-slate-50 p-8">
-              <h3 className="text-3xl font-black text-slate-900">
-                Share Now
-              </h3>
+              <h3 className="text-3xl font-black text-slate-900">Share Now</h3>
 
               <p className="mt-4 leading-7 text-slate-600">
                 Enter any email address and instantly open your email app with a
                 fully prepared professional email.
               </p>
 
-              <form
-                onSubmit={handleShare}
-                className="mt-10 space-y-6"
-              >
+              <form onSubmit={handleShare} className="mt-10 space-y-6">
                 <div>
                   <label className="mb-2 block text-sm font-semibold text-slate-700">
                     Recipient Email
@@ -259,9 +251,7 @@ Nishant Sharma
                     size={20}
                     className="transition group-hover:translate-x-1"
                   />
-
                   Share Portfolio
-
                   <ArrowRight
                     size={18}
                     className="transition group-hover:translate-x-1"
@@ -272,8 +262,8 @@ Nishant Sharma
               {/* INFO */}
               <div className="mt-8 rounded-2xl border border-purple-200 bg-purple-50 p-5">
                 <p className="text-sm leading-7 text-purple-700">
-                  After clicking the button, Gmail, Outlook, Apple Mail, or
-                  your default mail application will automatically open with the
+                  After clicking the button, Gmail, Outlook, Apple Mail, or your
+                  default mail application will automatically open with the
                   portfolio link, resume PDF, and professional message already
                   filled in.
                 </p>
