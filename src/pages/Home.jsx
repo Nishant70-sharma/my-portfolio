@@ -11,9 +11,13 @@ import {
   Briefcase,
 } from "lucide-react";
 
+import { useI18n } from "../i18n/i18n";
+
 export default function Home() {
+  const { t } = useI18n();
+
   return (
-    <main className="relative overflow-hidden bg-[#f8fafc] text-slate-900">
+    <main className="relative overflow-hidden bg-[var(--app-bg)] text-[var(--app-text)]">
       {/* BACKGROUND */}
       <div className="absolute left-[-120px] top-[-120px] h-[320px] w-[320px] rounded-full bg-purple-500/25 blur-3xl" />
       <div className="absolute right-[-100px] top-[40%] h-[280px] w-[280px] rounded-full bg-pink-500/20 blur-3xl" />
@@ -27,33 +31,30 @@ export default function Home() {
             {/* BADGE */}
             <div className="inline-flex items-center gap-2 rounded-full border border-purple-200 bg-white/80 px-5 py-2 text-sm font-semibold text-purple-700 shadow-sm backdrop-blur-xl">
               <Sparkles size={16} />
-              Full Stack Developer & UI Enthusiast
+              {t("home.badge")}
             </div>
 
             {/* TITLE */}
             <h1 className="mt-8 text-5xl font-black leading-tight tracking-tight sm:text-6xl lg:text-7xl">
-              Crafting
+              {t("home.heroTitlePrefix")}
               <span className="bg-gradient-to-r from-purple-600 via-pink-500 to-cyan-500 bg-clip-text text-transparent">
                 {" "}
-                Beautiful
+                {t("home.heroTitleHighlight")}
               </span>
               <br />
-              Modern Web Experiences
+              {t("home.heroTitleSuffix")}
             </h1>
 
             {/* DESC */}
             <p className="mt-8 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
               Hi, I'm{" "}
-              <span className="font-bold text-slate-900">
-                Nishant Sharma
-              </span>
+              <span className="font-bold text-slate-900">Nishant Sharma</span>
               — a passionate Full Stack Developer focused on building scalable,
               responsive, and visually polished applications using React,
               Laravel, Vue, Nuxt, Tailwind CSS, and modern web technologies.
               <br />
-              <br />
-              I love transforming ideas into smooth digital experiences with
-              clean code, performance optimization, and modern UI design.
+              <br />I love transforming ideas into smooth digital experiences
+              with clean code, performance optimization, and modern UI design.
             </p>
 
             {/* BUTTONS */}
@@ -62,7 +63,7 @@ export default function Home() {
                 to="/projects"
                 className="group inline-flex items-center gap-2 rounded-2xl bg-gradient-to-r from-purple-600 to-pink-500 px-8 py-4 font-semibold text-white shadow-2xl shadow-purple-500/20 transition duration-300 hover:scale-105"
               >
-                Explore Projects
+                {t("home.exploreProjects")}
                 <ArrowRight
                   size={18}
                   className="transition duration-300 group-hover:translate-x-1"
@@ -73,7 +74,7 @@ export default function Home() {
                 to="/contact"
                 className="rounded-2xl border border-slate-300 bg-white px-8 py-4 font-semibold text-slate-700 shadow-sm transition duration-300 hover:border-purple-400 hover:text-purple-700"
               >
-                Let's Connect
+                {t("home.letsConnect")}
               </Link>
             </div>
 
@@ -110,22 +111,22 @@ export default function Home() {
               {[
                 {
                   value: "2+",
-                  label: "Years Experience",
+                  label: t("home.statsYears"),
                   color: "text-purple-600",
                 },
                 {
                   value: "10+",
-                  label: "Company Projects",
+                  label: t("home.statsCompany"),
                   color: "text-pink-500",
                 },
                 {
                   value: "4+",
-                  label: "Personal Projects",
+                  label: t("home.statsPersonal"),
                   color: "text-cyan-500",
                 },
                 {
                   value: "100%",
-                  label: "Responsive Design",
+                  label: t("home.statsResponsive"),
                   color: "text-emerald-500",
                 },
               ].map((item, index) => (
@@ -162,7 +163,7 @@ export default function Home() {
             {/* FLOATING CARD */}
             <div className="absolute bottom-[-20px] left-1/2 w-[90%] max-w-sm -translate-x-1/2 rounded-3xl border border-white/50 bg-white/90 p-5 shadow-xl backdrop-blur-xl sm:bottom-8 sm:left-0 sm:w-auto sm:translate-x-0">
               <p className="text-sm font-medium text-slate-500">
-                Currently Working With
+                {t("home.currentlyWorkingWith")}
               </p>
 
               <h4 className="mt-2 text-lg font-bold text-slate-800">
@@ -170,8 +171,7 @@ export default function Home() {
               </h4>
 
               <p className="mt-2 text-sm leading-6 text-slate-500">
-                Building fast, scalable and user-friendly applications with
-                modern technologies.
+                {t("home.heroDescLove")}
               </p>
             </div>
           </div>
@@ -185,7 +185,7 @@ export default function Home() {
           <div className="mx-auto max-w-3xl text-center">
             <div className="inline-flex items-center gap-2 rounded-full border border-purple-200 bg-purple-50 px-4 py-2 text-sm font-semibold text-purple-700">
               <Code2 size={16} />
-              My Tech Stack
+              {t("home.techStackBadge")}
             </div>
 
             <h2 className="mt-6 text-4xl font-black text-slate-900 sm:text-5xl">
